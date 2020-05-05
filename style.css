@@ -1,0 +1,87 @@
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.scene {
+  width: 250px;
+  height: 150px;
+  border: 0px solid #CCC;
+  margin: 40px;
+  perspective: 400px;
+}
+
+.cube {
+  width: 250px;
+  height: 150px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 0.5s;
+}
+
+.cube.front  { transform: translateZ(-100px) rotateY( 0deg); }
+.cube.skew0  { transform: translateZ(-100px) rotateY( 20deg) rotateX(-20deg); }
+.cube.skew1  { transform: translateZ(-100px) rotateY( 25deg) rotateX(-25deg); }
+.cube.skew2  { transform: translateZ(-100px) rotateY( -20deg) rotateX(-40deg); }
+.cube.skew3  { transform: translateZ(-100px) rotateY( -25deg) rotateX( 20deg); }
+.cube.skew4  { transform: translateZ(-100px) rotateY( -20deg) rotateX( 30deg); }
+.cube.skew5  { transform: translateZ(-100px) rotateY( 35deg) rotateX(-30deg); }
+.cube.skew6  { transform: translateZ(-100px) rotateY( 20deg) rotateX(-25deg); }
+.cube.skew7  { transform: translateZ(-100px) rotateY( 30deg) rotateX( 30deg); }
+
+
+.cube__face--front,
+.cube__face--back {
+  width: 250px;
+  height: 150px;
+  line-height: 200px;
+  position:relative;
+}
+
+.cube__face--right,
+.cube__face--left {
+  width: 200px;
+  height: 150px;
+  left: 100px;
+  line-height: 200px;
+}
+
+.cube__face--top,
+.cube__face--bottom {
+  width: 250px;
+  height: 200px;
+  top: 50px;
+  line-height: 100px;
+}
+
+.ABFront  { background: hsla(20, 70%, 50%, 1); }
+.ABSides { background: hsla(20, 70%, 20%, 1); }
+
+.PodFront  { background: hsla(222, 100%, 50%, 1); }
+.PodSides { background: hsla(222, 100%, 20%, 1); }
+
+.PrjFront  { background: hsla(184, 100%, 60%, 1); }
+.PrjSides { background: hsla(184, 100%, 20%, 1); }
+
+.ArchFront  { background: hsla(0, 0%, 80%, 1); }
+.ArchSides { background: hsla(0, 0%, 20%, 1); }
+
+.DJFront  { background: hsla(360, 100%, 60%, 1); }
+.DJSides { background: hsla(360, 100%, 20%, 1); }
+
+.DocuFront  { background: hsla(117, 100%, 60%, 1); }
+.DocuSides { background: hsla(117, 100%, 20%, 1); }
+
+.WSFront  { background: hsla(283, 100%, 60%, 1); }
+.WSSides { background: hsla(283, 100%, 20%, 1); }
+
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ( 50px); }
+
+.cube__face--right  { transform: rotateY( 90deg) translateZ( 150px) translateY(-150px) translateX(50px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ( 100px) translateY(-300px) translateX(-50px); }
+
+.cube__face--top    { transform: rotateX( 90deg) translateZ(550px) translateY(-50px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(-600px) translateY(50px); }
+
+label { margin-right: 10px; }
